@@ -32,8 +32,20 @@
           />
         </svg>
       </div> -->
-      <div class="main-tool-bar">
 
+      <!-- <div class="flex justify-center flex-wrap bg-red-200">
+        <el-tabs
+        v-model="activeName"
+        class="demo-tabs"
+            @tab-click="handleClick"
+          >
+            <el-tab-pane label="Mix" name="first">Mix</el-tab-pane>
+            <el-tab-pane label="Mix 01" name="second">Mix 01</el-tab-pane>
+            <el-tab-pane label="Mix 02" name="third">Role</el-tab-pane>
+            <el-tab-pane label="Mix 03" name="fourth">Task</el-tab-pane>
+          </el-tabs>
+        </div> -->
+      <div>
         <div class="flex justify-between mx-1 pt-1">
           <ClientOnly>
             <button class="hover:bg-gray-300 hover:rounded-full p-1">
@@ -61,21 +73,9 @@
             </template>
           </ClientOnly>
           <span class="italic font-semibold text-lg"> Explore Larosa </span>
-  
+
           <ClientOnly>
             <button class="hover:bg-gray-300 hover:rounded-full p-1">
-              <!-- <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="28"
-                  height="28"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M8 16c3.314 0 6-2 6-5.5c0-1.5-.5-4-2.5-6c.25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6c-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75c0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5c-.179 1-.25 2 1 3c.625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"
-                  />
-                </svg> -->
-  
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -97,7 +97,7 @@
             </template>
           </ClientOnly>
         </div>
-  
+
         <div class="flex justify-between items-center">
           <ClientOnly>
             <button class="hover:bg-gray-300 hover:rounded-full p-1">
@@ -119,16 +119,18 @@
               </div>
             </template>
           </ClientOnly>
-  
+
           <div class="flex flex-col justify-center">
-            <div class="mx-auto w-16 h-16 relative rounded-full overflow-hidden">
+            <div
+              class="mx-auto w-16 h-16 relative rounded-full overflow-hidden"
+            >
               <img
                 class="object-cover object-center h-20"
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
                 alt="Woman looking front"
               />
             </div>
-  
+
             <div class="flex justify-center -mt-6 ml-16 z-10 text-blue-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -157,6 +159,9 @@
                   d="M200 224h-49.46A266.56 266.56 0 0 0 174 200.25c27.45-31.57 42-64.85 42-96.25a88 88 0 0 0-176 0c0 31.4 14.51 64.68 42 96.25A266.56 266.56 0 0 0 105.46 224H56a8 8 0 0 0 0 16h144a8 8 0 0 0 0-16M56 104a72 72 0 0 1 144 0c0 57.23-55.47 105-72 118c-16.53-13-72-60.77-72-118m112 0a40 40 0 1 0-40 40a40 40 0 0 0 40-40m-64 0a24 24 0 1 1 24 24a24 24 0 0 1-24-24"
                 />
               </svg>
+              <div
+                class="bg-gray-200 bg-opacity-50 absolute h-12 mt-4 ml-3 p-2 z-40 animate-pulse rounded"
+              ></div>
             </button>
             <template #fallback>
               <div class="h-[4vh] flex items-center justify-center text-center">
@@ -167,153 +172,158 @@
         </div>
       </div>
 
-
-      <!-- <div class="flex justify-center flex-wrap bg-red-200">
-          <el-tabs
-            v-model="activeName"
-            class="demo-tabs"
-            @tab-click="handleClick"
-          >
-            <el-tab-pane label="Mix" name="first">Mix</el-tab-pane>
-            <el-tab-pane label="Mix 01" name="second">Mix 01</el-tab-pane>
-            <el-tab-pane label="Mix 02" name="third">Role</el-tab-pane>
-            <el-tab-pane label="Mix 03" name="fourth">Task</el-tab-pane>
-          </el-tabs>
-        </div> -->
-
       <!-- Start of posts -->
       <el-scrollbar height="100vh">
-        <div class="grid grid-cols-1 gap-1">
-          <div v-for="(item, index) in 10" :key="index" class="scroll-body">
+        <div class="grid grid-cols-1 gap-1 mb-12">
+          <div v-for="(item, index) in data" :key="index">
             <div class="group relative overflow-hidden">
-              <div
-                class="group-hover:translate-y-0 transition-all duration-700 translate-y-full top-0 right-0 bottom-24 left-0 absolute z-10"
-              ></div>
-
-              <!-- <div class="overflow-hidden">
-                  <img
-                    class="object-cover object-top w-full"
-                    src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-                    alt="Mountain"
-                  />
-
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 relative border-4 border-white rounded-full overflow-hidden"
-                    >
-                      <img
-                        class="object-cover object-center h-12"
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-                        alt="Woman looking front"
-                      />
-                    </div>
-
-                    <div class="mx-2 font-semibold">Serena Hotel</div>
-
-                    <div>
-                      <svg
-                        class="text-blue-600"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M10.95 12.7L9.5 11.275Q9.225 11 8.813 11t-.713.3q-.275.275-.275.7t.275.7l2.15 2.15q.3.3.7.3t.7-.3l4.25-4.25q.3-.3.287-.7t-.287-.7q-.3-.3-.712-.312t-.713.287zm-2.8 9.05L6.7 19.3l-2.75-.6q-.375-.075-.6-.387t-.175-.688L3.45 14.8l-1.875-2.15q-.25-.275-.25-.65t.25-.65L3.45 9.2l-.275-2.825q-.05-.375.175-.688t.6-.387l2.75-.6l1.45-2.45q.2-.325.55-.438t.7.038l2.6 1.1l2.6-1.1q.35-.15.7-.038t.55.438L17.3 4.7l2.75.6q.375.075.6.388t.175.687L20.55 9.2l1.875 2.15q.25.275.25.65t-.25.65L20.55 14.8l.275 2.825q.05.375-.175.688t-.6.387l-2.75.6l-1.45 2.45q-.2.325-.55.438t-.7-.038l-2.6-1.1l-2.6 1.1q-.35.15-.7.038t-.55-.438"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div> -->
+              <!-- <div
+                class="bg-red-800 group-hover:translate-y-0 transition-all duration-700 translate-y-full top-0 right-0 left-0 absolute"
+              ></div> -->
 
               <div class="relative overflow-hidden glow-on-hover hover:p-[2px]">
-                <!-- Profile info -->
-                <div class="absolute bottom-0 left-0 z-10 p-2 text-white">
-                  <div class="flex items-center">
-                    <div
-                      class="w-12 h-12 relative rounded-full overflow-hidden"
-                    >
-                      <img
-                        class="object-cover object-center h-12"
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-                        alt="Woman looking front"
-                      />
-                    </div>
-
-                    <div class="mx-2 font-semibold">Serena Hotel</div>
-
-                    <div>
-                      <svg
-                        class="text-blue-600"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
+                <ClientOnly>
+                  <!-- Profile info -->
+                  <div class="absolute bottom-0 left-0 z-10 p-2 text-white">
+                    <div class="flex items-center">
+                      <div
+                        class="w-12 h-12 relative rounded-full overflow-hidden"
                       >
-                        <path
-                          fill="currentColor"
-                          d="M10.95 12.7L9.5 11.275Q9.225 11 8.813 11t-.713.3q-.275.275-.275.7t.275.7l2.15 2.15q.3.3.7.3t.7-.3l4.25-4.25q.3-.3.287-.7t-.287-.7q-.3-.3-.712-.312t-.713.287zm-2.8 9.05L6.7 19.3l-2.75-.6q-.375-.075-.6-.387t-.175-.688L3.45 14.8l-1.875-2.15q-.25-.275-.25-.65t.25-.65L3.45 9.2l-.275-2.825q-.05-.375.175-.688t.6-.387l2.75-.6l1.45-2.45q.2-.325.55-.438t.7.038l2.6 1.1l2.6-1.1q.35-.15.7-.038t.55.438L17.3 4.7l2.75.6q.375.075.6.388t.175.687L20.55 9.2l1.875 2.15q.25.275.25.65t-.25.65L20.55 14.8l.275 2.825q.05.375-.175.688t-.6.387l-2.75.6l-1.45 2.45q-.2.325-.55.438t-.7-.038l-2.6-1.1l-2.6 1.1q-.35.15-.7.038t-.55-.438"
-                        ></path>
-                      </svg>
+                        <img
+                          class="object-cover object-center h-12"
+                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+                          alt="Woman looking front"
+                        />
+                      </div>
+
+                      <div class="mx-2 font-semibold">Serena Hotel</div>
+
+                      <div>
+                        <svg
+                          class="text-blue-600"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M10.95 12.7L9.5 11.275Q9.225 11 8.813 11t-.713.3q-.275.275-.275.7t.275.7l2.15 2.15q.3.3.7.3t.7-.3l4.25-4.25q.3-.3.287-.7t-.287-.7q-.3-.3-.712-.312t-.713.287zm-2.8 9.05L6.7 19.3l-2.75-.6q-.375-.075-.6-.387t-.175-.688L3.45 14.8l-1.875-2.15q-.25-.275-.25-.65t.25-.65L3.45 9.2l-.275-2.825q-.05-.375.175-.688t.6-.387l2.75-.6l1.45-2.45q.2-.325.55-.438t.7.038l2.6 1.1l2.6-1.1q.35-.15.7-.038t.55.438L17.3 4.7l2.75.6q.375.075.6.388t.175.687L20.55 9.2l1.875 2.15q.25.275.25.65t-.25.65L20.55 14.8l.275 2.825q.05.375-.175.688t-.6.387l-2.75.6l-1.45 2.45q-.2.325-.55.438t-.7-.038l-2.6-1.1l-2.6 1.1q-.35.15-.7.038t-.55-.438"
+                          ></path>
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!-- End of Profile info -->
+                  <!-- End of Profile info -->
 
-                <!-- Image -->
-                <img
-                  class="object-cover object-top w-full"
-                  src="/food.jpg"
-                  alt="Mountain"
-                />
+                  <!-- Image -->
+                  <v-img
+                    class="object-cover object-top w-full bg-grey-lighten-2"
+                    :src="item.image"
+                    :lazy-src="item.image"
+                  >
+                    <template v-slot:placeholder>
+                      <v-row
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center"
+                      >
+                        <!-- <div
+                          class="h-[4vh] flex items-center justify-center text-center"
+                        >
+                          <el-button loading round></el-button>
+                        </div> -->
+                      </v-row>
+                    </template>
+                  </v-img>
 
-                <!-- Image with gradient background -->
-                <div class="absolute top-0 left-0 w-full h-full">
+                  <!-- Image with gradient background -->
                   <div
-                    class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-b from-transparent to-red-700"
-                  ></div>
-                </div>
-                <!-- End of Image with gradient background -->
+                    @dblclick="animateIcon(index, true)"
+                    class="absolute top-0 left-0 w-full h-full"
+                  >
+                    <div class="h-[100%]">
+                      <div
+                        class="relative relative top-[40%] left-[48%] h-[100%]"
+                      >
+                        <ClientOnly>
+                          <IconsHeartFilled
+                            class="text-red-600 hover:cursor-pointer hidden"
+                            :id="'large_icon_' + index"
+                            :width="'30'"
+                            :height="'30'"
+                            v-if="!item.liked"
+                          />
+
+                          <IconsHeartEmpty
+                            class="hover:cursor-pointer text-gray-900/70 hidden"
+                            :id="'large_icon_' + index"
+                            :width="'30'"
+                            :height="'30'"
+                            v-else
+                          />
+
+                          <template #fallback>
+                            <div
+                              class="h-[4vh] flex items-center justify-center text-center my-2"
+                            >
+                              <el-button loading round></el-button>
+                            </div>
+                          </template>
+                        </ClientOnly>
+                      </div>
+                    </div>
+
+                    <div
+                      :id="'red_shade_' + index"
+                      :class="{
+                        'left-[100%]': !item.liked,
+                        // 'left-0': !item.liked,
+                      }"
+                      class="absolute bottom-0 w-full h-1/4 bg-gradient-to-b from-transparent to-red-700/90"
+                    ></div>
+
+                    <div
+                      :id="'dark_shade_' + index"
+                      :class="{
+                        'left-[100%]': item.liked,
+                        // 'left-0': !item.liked,
+                      }"
+                      class="absolute bottom-0 w-full h-1/4 bg-gradient-to-b from-transparent to-gray-700/90"
+                    ></div>
+                  </div>
+                  <!-- End of Image with gradient background -->
+
+                  <template #fallback>
+                    <div
+                      class="animate-pulse h-96 bg-gray-300 rounded col-span-2"
+                    ></div>
+                  </template>
+                </ClientOnly>
               </div>
 
               <div>
                 <div class="w-full">
                   <div class="flex justify-between my-1 mx-1">
-                    <!-- <svg
-                        class="hover:cursor-pointer gsap-like-red"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="23"
-                        height="23"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="4"
-                          d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8"
-                        />
-                      </svg> -->
-
                     <ClientOnly>
-                      <svg
-                        class="text-red-600 gsap-like-empty"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        viewBox="0 0 48 48"
-                      >
-                        <path
-                          fill="currentColor"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="4"
-                          d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8"
-                        />
-                      </svg>
+                      <IconsHeartEmpty
+                        v-if="!item.liked"
+                        class="hover:cursor-pointer"
+                        :id="'icon_' + index"
+                        :height="'31'"
+                        :width="'31'"
+                        @click="animateIcon(index)"
+                      />
+
+                      <IconsHeartFilled
+                        v-else
+                        class="text-red-600 hover:cursor-pointer"
+                        :id="'icon_' + index"
+                        :height="'31'"
+                        :width="'31'"
+                        @click="animateIcon(index)"
+                      />
+
                       <template #fallback>
                         <div
                           class="h-[4vh] flex items-center justify-center text-center my-2"
@@ -324,18 +334,18 @@
                     </ClientOnly>
 
                     <ClientOnly>
-                      <!-- <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m22 9.24l-7.19-.62L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.63-7.03zM12 15.4l-3.76 2.27l1-4.28l-3.32-2.88l4.38-.38L12 6.1l1.71 4.04l4.38.38l-3.32 2.88l1 4.28z"
-                        />
-                      </svg> -->
-                      <svg class="-mt-2" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24"><path fill="currentColor" d="m8.85 17.825l3.15-1.9l3.15 1.925l-.825-3.6l2.775-2.4l-3.65-.325l-1.45-3.4l-1.45 3.375l-3.65.325l2.775 2.425zm-1.525 2.098l1.24-5.313l-4.123-3.572l5.431-.47L12 5.557l2.127 5.01l5.43.47l-4.122 3.572l1.24 5.313L12 17.102zM12 13.25"/></svg>
+                      <IconsStarFilled
+                        class="text-yellow-600 mb-1 hover:cursor-pointer"
+                        v-if="item.favorite"
+                        :id="'icon_favourite_' + index"
+                        @click="animateFavouriteIcon(index)"
+                      />
+                      <IconsStarEmpty
+                        v-else
+                        :id="'icon_favourite_' + index"
+                        @click="animateFavouriteIcon(index)"
+                      />
+
                       <template #fallback>
                         <div
                           class="h-[4vh] flex items-center justify-center text-center my-2"
@@ -346,26 +356,11 @@
                     </ClientOnly>
 
                     <ClientOnly>
-                      <div class="flex">
-                        <svg
-                          class="hover:cursor-pointer"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="28"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                            d="M12 21a9 9 0 1 0-9-9c0 1.488.36 2.89 1 4.127L3 21l4.873-1c1.236.639 2.64 1 4.127 1"
-                          />
-                        </svg>
+                      <div class="flex mt-1">
+                        <IconsChatEmpty />
 
-                        <div class="text-xs">
-                          <span class="text-red-600 font-bold"> 256 </span>
+                        <div class="text-xs relative left-1">
+                          <span class="font-bold"> 256 </span>
                         </div>
                       </div>
                       <template #fallback>
@@ -378,8 +373,21 @@
                     </ClientOnly>
 
                     <ClientOnly>
-
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m5.812 11l2.178 2.168a1.1 1.1 0 0 0 1.05.3a1.119 1.119 0 0 0 .809-.74l3.576-10.72A1.118 1.118 0 0 0 11.987.57L1.267 4.147a1.119 1.119 0 0 0-.74.859a1.099 1.099 0 0 0 .3 1l2.737 2.737l-.09 3.466zM13.106.79L3.564 8.742"/></svg>
+                      <svg
+                        class="mr-1 mt-1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m5.812 11l2.178 2.168a1.1 1.1 0 0 0 1.05.3a1.119 1.119 0 0 0 .809-.74l3.576-10.72A1.118 1.118 0 0 0 11.987.57L1.267 4.147a1.119 1.119 0 0 0-.74.859a1.099 1.099 0 0 0 .3 1l2.737 2.737l-.09 3.466zM13.106.79L3.564 8.742"
+                        />
+                      </svg>
 
                       <template #fallback>
                         <div
@@ -412,32 +420,32 @@
                   </div>
 
                   <div
-                    class="flex mx-1 border-t my-1"
+                    class="flex px-1 border-2 border-t border-b py-1 p-1"
                     :class="isDark ? 'border-gray-700' : 'border-gray-200'"
                   >
                     <ClientOnly>
-                      <div class="font-semibold mr-1">Post Details</div>
-                      <div>$12 per day only !</div>
+                      <div class="text-wrap">
+                        <span class="font-semibold mr-1">Post Details</span>
+                        <span> {{ item.postDetails }} </span>
+                      </div>
                       <template #fallback>
                         <div
-                          class="h-[1vh] flex items-center justify-center text-center my-1 mr-1"
+                          class="h-[1vh] mb-1 flex items-center justify-center text-center my-1 mr-1"
                         >
                           <div
-                            class="animate-pulse w-[35vh] h-4 mt-2 -ml-1 bg-gray-300 rounded col-span-2"
+                            class="animate-pulse w-[35vh] h-4 -ml-1 bg-gray-300 rounded col-span-2"
                           ></div>
                         </div>
                       </template>
                     </ClientOnly>
                   </div>
 
+                  <div class="bg-gray-200 w-full h-[2px] my-1 mx-1"></div>
+
                   <div
-                    class="rounded-lg py-1 mb-1 border-b"
-                    :class="isDark ? 'border-gray-700' : 'border-gray-200'"
+                    class="rounded-lg py-1 px-1 mb-1 border-2 border-t border-b"
                   >
-                    <div
-                      class="flex items-center border-b pb-1"
-                      :class="isDark ? 'border-gray-700' : 'border-gray-200'"
-                    >
+                    <div class="flex items-center pb-1">
                       <ClientOnly>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -529,34 +537,35 @@
                               d="M9.6 16.65L12 14.8l2.4 1.85l-.9-3.05l2.25-1.6h-2.8L12 8.9l-.95 3.1h-2.8l2.25 1.6zM5.825 22l2.325-7.6L2 10h7.6L12 2l2.4 8H22l-6.15 4.4l2.325 7.6L12 17.3zM12 12.775"
                             />
                           </svg>
-  
+
                           <span class="ml-2">4.8</span>
                         </div>
-                      <template #fallback>
-                        <div
-                          class="h-[1vh] flex items-center justify-center text-center my-1 mr-1"
-                        >
+                        <template #fallback>
                           <div
-                            class="animate-pulse w-[20vh] h-4 my-1 -ml-1 bg-gray-300 rounded col-span-2"
-                          ></div>
-                        </div>
-                      </template>
-                    </ClientOnly>
+                            class="h-[1vh] flex items-center justify-center text-center my-1 mr-1"
+                          >
+                            <div
+                              class="animate-pulse w-[20vh] h-4 my-1 -ml-1 bg-gray-300 rounded col-span-2"
+                            ></div>
+                          </div>
+                        </template>
+                      </ClientOnly>
 
-                    <ClientOnly>
-                      <span> Tsh 265,200 </span>
-                    <template #fallback>
-                        <div
-                          class="h-[1vh] flex items-center justify-center text-center my-1 mr-1"
-                        >
+                      <ClientOnly>
+                        <span> Tsh 265,200 </span>
+                        <template #fallback>
                           <div
-                            class="animate-pulse w-[20vh] h-4 my-1 -ml-1 bg-gray-300 rounded col-span-2"
-                          ></div>
-                        </div>
-                      </template>
-                    </ClientOnly>
+                            class="h-[1vh] flex items-center justify-center text-center my-1 mr-1"
+                          >
+                            <div
+                              class="animate-pulse w-[20vh] h-4 my-1 -ml-1 bg-gray-300 rounded col-span-2"
+                            ></div>
+                          </div>
+                        </template>
+                      </ClientOnly>
+                    </div>
                   </div>
-                  </div>
+                  <div class="bg-gray-200 w-full h-[2px] my-1 mx-1"></div>
                 </div>
               </div>
 
@@ -642,68 +651,7 @@
         </div>
       </el-scrollbar>
 
-      <div
-        class="flex justify-between py-1 bg-white bg-opacity-25 fixed bottom-0 z-20 w-full sm:hidden"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M4 19v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-3q-.425 0-.712-.288T14 20v-5q0-.425-.288-.712T13 14h-2q-.425 0-.712.288T10 15v5q0 .425-.288.713T9 21H6q-.825 0-1.412-.587T4 19"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"
-          />
-        </svg>
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4zm1 5q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22"/></svg> -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4zm1 5q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-        >
-          <path fill="currentColor" d="M4 16h12v2H4zm-2-5h10v2H2z" />
-          <path
-            fill="currentColor"
-            d="m29.919 16.606l-3-7A.999.999 0 0 0 26 9h-3V7a1 1 0 0 0-1-1H6v2h15v12.556A3.992 3.992 0 0 0 19.142 23h-6.284a4 4 0 1 0 0 2h6.284a3.98 3.98 0 0 0 7.716 0H29a1 1 0 0 0 1-1v-7a.997.997 0 0 0-.081-.394M9 26a2 2 0 1 1 2-2a2.002 2.002 0 0 1-2 2m14-15h2.34l2.144 5H23Zm0 15a2 2 0 1 1 2-2a2.002 2.002 0 0 1-2 2m5-3h-1.142A3.995 3.995 0 0 0 23 20v-2h5Z"
-          />
-        </svg>
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5.85 17.1q1.275-.975 2.85-1.537T12 15q1.725 0 3.3.563t2.85 1.537q.875-1.025 1.363-2.325T20 12q0-3.325-2.337-5.663T12 4Q8.675 4 6.337 6.338T4 12q0 1.475.488 2.775T5.85 17.1M12 13q-1.475 0-2.488-1.012T8.5 9.5q0-1.475 1.013-2.488T12 6q1.475 0 2.488 1.013T15.5 9.5q0 1.475-1.012 2.488T12 13m0 9q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22"/></svg> -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M12 11q.825 0 1.413-.588Q14 9.825 14 9t-.587-1.413Q12.825 7 12 7q-.825 0-1.412.587Q10 8.175 10 9q0 .825.588 1.412Q11.175 11 12 11Zm0 2q-1.65 0-2.825-1.175Q8 10.65 8 9q0-1.65 1.175-2.825Q10.35 5 12 5q1.65 0 2.825 1.175Q16 7.35 16 9q0 1.65-1.175 2.825Q13.65 13 12 13Zm0 11q-2.475 0-4.662-.938q-2.188-.937-3.825-2.574Q1.875 18.85.938 16.663Q0 14.475 0 12t.938-4.663q.937-2.187 2.575-3.825Q5.15 1.875 7.338.938Q9.525 0 12 0t4.663.938q2.187.937 3.825 2.574q1.637 1.638 2.574 3.825Q24 9.525 24 12t-.938 4.663q-.937 2.187-2.574 3.825q-1.638 1.637-3.825 2.574Q14.475 24 12 24Zm0-2q1.8 0 3.375-.575T18.25 19.8q-.825-.925-2.425-1.612q-1.6-.688-3.825-.688t-3.825.688q-1.6.687-2.425 1.612q1.3 1.05 2.875 1.625T12 22Zm-7.7-3.6q1.2-1.3 3.225-2.1q2.025-.8 4.475-.8q2.45 0 4.463.8q2.012.8 3.212 2.1q1.1-1.325 1.713-2.95Q22 13.825 22 12q0-2.075-.788-3.887q-.787-1.813-2.15-3.175q-1.362-1.363-3.175-2.151Q14.075 2 12 2q-2.05 0-3.875.787q-1.825.788-3.187 2.151Q3.575 6.3 2.788 8.113Q2 9.925 2 12q0 1.825.6 3.463q.6 1.637 1.7 2.937Z"
-          />
-        </svg>
-      </div>
+      <Navigations />
 
       <!-- <div class="p-4 border-t mx-8 mt-2">
         <button class="w-1/2 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">Follow</button>
@@ -718,71 +666,234 @@
 // const route = useRoute();
 // console.log(route.path === '/')
 const isDark = useDark();
-isDark.value = false
+isDark.value = false;
 // import { ref, watch, onMounted } from "vue";
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
-onMounted(() => {
-  const showAnim = gsap.from('.main-tool-bar', {
-    yPercent: -100,
-    paused: true,
-    duration: 0.2
-  });
+const data = ref([]);
 
-  ScrollTrigger.create({
-    // trigger: ".scroll-body",
-    start: "top top",
-    end: "max",
-    onUpdate: (self) => {
-      self.direction === -1 ? showAnim.play() : showAnim.reverse()
+// Generate data
+// for (let i = 0; i < 50; i++) {
+//   const liked = i % 2 === 0;
+//   const favorite = i % 3 === 0;
+//   data.value.push({ image: "/food.jpg", liked, favorite });
+// }
+
+// const data = ref([]);
+
+// Generate data
+for (let i = 0; i < 50; i++) {
+  const liked = i % 2 === 0;
+  const favorite = i % 3 === 0;
+  const postDetails = generatePostDetails(); // Function to generate post details
+  data.value.push({ image: "/food.jpg", liked, favorite, postDetails });
+}
+
+function generatePostDetails() {
+  const sentences = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  ];
+
+  let postDetails = "";
+  for (let i = 0; i < 3; i++) {
+    // Adjust the number of sentences as needed
+    postDetails +=
+      sentences[Math.floor(Math.random() * sentences.length)] + " ";
+  }
+  return postDetails;
+}
+
+// const animateIcon = (index) => {console.log('hello')
+//   gsap.to(`#icon_${index}`, { duration: 1, rotate: 360 });
+// }
+
+function animateFavouriteIcon(index) {
+  const t4 = gsap.timeline();
+  // const t5 = gsap.timeline();
+  // const t6 = gsap.timeline();
+
+  t4.fromTo(
+    `#icon_favourite_${index}`,
+    {
+      scale: 1.9,
+      autoAlpha: 0,
+      // opacity: largeIcon,
+      // ease: Linear.easeNone,
+      ease: "elastic.out(7, 9)",
+    },
+    {
+      duration: 0.3,
+      scale: 1.1,
+      autoAlpha: 1,
+      opacity: 0,
+      display: "none",
+      ease: "elastic.out(2, .9)",
+      // ease: "power2.inOut",
+      // ease: "elastic.out(2, .7)",
+      onComplete: () => {},
     }
-  });
-});
+  );
 
+  setTimeout(() => {
+    data.value[index].favorite = !data.value[index].favorite;
+  }, 500);
+}
+function animateIcon(index, largeIcon = false) {
+  console.log(index, largeIcon);
 
+  const t1 = gsap.timeline();
+  const t2 = gsap.timeline();
+  const t3 = gsap.timeline();
+  // const t4 = gsap.timeline();
+  // const t5 = gsap.timeline();
+  // const t6 = gsap.timeline();
+
+  // Determine the ID based on the icon size
+  const iconId = largeIcon ? `large_icon_${index}` : `icon_${index}`;
+  const iconScale = largeIcon ? 0.05 : 1.9;
+  const iconScaleTo = largeIcon ? 3.3 : 1.1;
+  // const iconOpacity = largeIcon ? 0 : 1;
+  // const iconOpacityTo = largeIcon ? 1 : 1;
+  const iconDisplay = largeIcon ? "block" : "block";
+  const iconDisplayTo = largeIcon ? "none" : "block";
+  const iconDuration = largeIcon ? 1.1 : 0.3;
+
+  t1.fromTo(
+    `#${iconId}`,
+    {
+      scale: iconScale,
+      autoAlpha: 0,
+      // opacity: largeIcon,
+      display: iconDisplay,
+      // ease: Linear.easeNone,
+      ease: "elastic.out(7, 9)",
+    },
+    {
+      duration: iconDuration,
+      scale: iconScaleTo,
+      autoAlpha: 1,
+      opacity: 0,
+      // display:"none",
+      display: iconDisplayTo,
+      ease: "elastic.out(2, .9)",
+      // ease: "power2.inOut",
+      // ease: "elastic.out(2, .7)",
+
+      onComplete: () => {
+        // Check if data.value[index].liked is true
+        // if (data.value[index].liked) {
+        //   // Execute t2.fromTo if data.value[index].liked is true
+
+        //   t2.fromTo(
+        //     `#red_shade_${index}`,
+        //     {
+        //       left: 0,
+        //     },
+        //     {
+        //       duration: 1.0,
+        //       left: "100%",
+        //       ease: "elastic.out(4, 3)",
+        //       onComplete: () => {
+        //         // data.value[index].liked = !data.value[index].liked;
+        //       },
+        //     }
+        //   );
+        // } else {
+        //   t2.fromTo(
+        //     `#red_shade_${index}`,
+        //     {
+        //       left: "100%",
+        //     },
+        //     {
+        //       duration: 1.0,
+        //       left: 0,
+        //       ease: "elastic.out(4, 3)",
+        //       onComplete: () => {
+        //         // data.value[index].liked = !data.value[index].liked;
+        //       },
+        //     }
+        //   );
+        // }
+
+        if (!data.value[index].liked) {
+          // Execute t2.fromTo if data.value[index].liked is true
+          t3.fromTo(
+            `#dark_shade_${index}`,
+            {
+              left: 0,
+            },
+            {
+              duration: 1.0,
+              opacity: 0,
+              left: "100%",
+              ease: "elastic.out(4, 3)",
+              onComplete: () => {
+                // data.value[index].liked = !data.value[index].liked;
+              },
+            }
+          );
+
+          t2.fromTo(
+            `#red_shade_${index}`,
+            {
+              left: "100%",
+            },
+            {
+              duration: 1.0,
+              left: 0,
+              opacity: 1,
+              ease: "elastic.out(4, 3)",
+              onComplete: () => {
+                // data.value[index].liked = !data.value[index].liked;
+              },
+            }
+          );
+        } else {
+          t2.fromTo(
+            `#red_shade_${index}`,
+            {
+              left: 0,
+            },
+            {
+              duration: 1.0,
+              left: "100%",
+              opacity: 0,
+              ease: "elastic.out(4, 3)",
+              onComplete: () => {
+                // data.value[index].liked = !data.value[index].liked;
+              },
+            }
+          );
+          t3.fromTo(
+            `#dark_shade_${index}`,
+            {
+              left: "100%",
+            },
+            {
+              duration: 1.0,
+              opacity: 1,
+              left: 0,
+              ease: "elastic.out(4, 3)",
+              onComplete: () => {
+                // data.value[index].liked = !data.value[index].liked;
+              },
+            }
+          );
+        }
+      },
+    }
+  );
+  console.log(largeIcon, data.value[index].liked);
+  setTimeout(() => {
+    data.value[index].liked = !data.value[index].liked;
+  }, 500);
+}
 
 // const { sayHello } = useUtils();
 // sayHello("RickGath fredro");
-
-// onMounted(() => {
-//   const t1 = gsap.timeline();
-//   const t2 = gsap.timeline();
-//   const t3 = gsap.timeline();
-//   const t4 = gsap.timeline();
-//   const t5 = gsap.timeline();
-//   t1.fromTo(
-//     "#animate-1",
-//     {
-//       marginTop: "-100%",
-//     },
-//     {
-//       duration: 0.5,
-//       marginTop: "0px",
-//       ease: "power2.inOut",
-//     }
-//   );
-//   t1.fromTo(
-//     "#animate-2",
-//     {
-//       marginTop: "-100%",
-//     },
-//     {
-//       duration: 0.6,
-//       marginTop: "0px",
-//       ease: "power2.inOut",
-//     }
-//   );
-//   t1.fromTo(
-//     "#animate-3",
-//     {
-//       marginTop: "-100%",
-//     },
-//     {
-//       duration: 0.6,
-//       marginTop: "0px",
-//       ease: "elastic.inOut",
-//     }
-//   );
-// });
 </script>
 <!-- animate-3 -->

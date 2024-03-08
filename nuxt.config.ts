@@ -2,16 +2,18 @@
 export default defineNuxtConfig({
   pages: true,
   devtools: { enabled: true },
-  modules: [ '@element-plus/nuxt', '@vueuse/nuxt', '@nuxtjs/tailwindcss', 'nuxt-icon', '@pinia/nuxt'],  elementPlus: { /** Options */ },
+  modules: [ '@element-plus/nuxt', '@vueuse/nuxt', '@nuxtjs/tailwindcss', 'nuxt-icon', '@pinia/nuxt', 'nuxt-mapbox',],  elementPlus: { /** Options */ },
   plugins: ['~/plugins/gsap', { src : '~/plugins/vue-apexchart.client.js', ssr : false }],
   build: {
     vendor : [
        'vue-apexchart'
     ],
+    transpile: ['vuetify'],
   },
   server: {
     host: "0.0.0.0"
   },
+  
   app: {
     head: {
       // link: [
@@ -48,10 +50,10 @@ export default defineNuxtConfig({
           href:
             'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto+Mono:wght@100;300;400;500;700;900&display=swap',
         },
-        {
-          rel: 'stylesheet',
-          href: 'https://vjs.zencdn.net/8.10.0/video-js.css'
-        },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://vjs.zencdn.net/8.10.0/video-js.css'
+        // },
       ],
 
     }

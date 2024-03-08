@@ -170,16 +170,16 @@ onMounted(() => {
     );
   }
 
-  const initialClassName = isDark.value ? "dark-background" : "light-background";
-  const element = document.querySelector(".background-image");
-  element.classList.add(initialClassName);
+  // const initialClassName = isDark.value ? "dark-background" : "light-background";
+  // const element = document.querySelector(".background-image");
+  // element.classList.add(initialClassName);
 });
 
 watch(isDark, (newValue) => {
-  const element = document.querySelector(".background-image");
-  const className = !newValue ? "light-background" : "dark-background";
-  element.classList.remove("light-background", "dark-background");
-  element.classList.add(className);
+  // const element = document.querySelector(".background-image");
+  // const className = !newValue ? "light-background" : "dark-background";
+  // element.classList.remove("light-background", "dark-background");
+  // element.classList.add(className);
 });
 </script>
 

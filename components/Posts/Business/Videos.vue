@@ -3,7 +3,7 @@
     <div>
       <el-scrollbar height="70vh">
         <div class="grid grid-cols-2 gap-[1px]">
-          <div v-for="(item, index) in 10" :key="index">
+          <div v-for="(item, index) in 20" :key="index">
             <div class="group relative overflow-hidden bg-blue-500">
               <div
                 class="group-hover:translate-y-0 transition-all duration-700 translate-y-full top-0 right-0 bottom-24 left-0 absolute z-10"
@@ -44,13 +44,13 @@
         // ]
       };
     },
-    mounted() {
-      // Load the Video.js script when the component is mounted
-      const script = document.createElement('script');
-      script.src = 'https://vjs.zencdn.net/8.10.0/video.min.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    // mounted() {
+    //   // Load the Video.js script when the component is mounted
+    //   const script = document.createElement('script');
+    //   script.src = 'https://vjs.zencdn.net/8.10.0/video.min.js';
+    //   script.async = true;
+    //   document.body.appendChild(script);
+    // }
   };
   </script>
 
