@@ -5,49 +5,14 @@
     <div
       class="w-screen text-sm max-w-2xl sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto"
     >
-      <!-- <div class="flex justify-between mx-2 absolute mt-1 bg-red-200">
-        <svg
-          class="text-white rounded-lg p-1 hover:cursor-pointer"
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="m3.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675T.825 12q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875z"
-          />
-        </svg>
-
-        <svg
-          class="text-white rounded-lg p-1 hover:cursor-pointer"
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0m0-6a2 2 0 1 0 4 0a2 2 0 0 0-4 0m0 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0"
-          />
-        </svg>
-      </div> -->
-
-      <!-- <div class="flex justify-center flex-wrap bg-red-200">
-        <el-tabs
-        v-model="activeName"
-        class="demo-tabs"
-            @tab-click="handleClick"
-          >
-            <el-tab-pane label="Mix" name="first">Mix</el-tab-pane>
-            <el-tab-pane label="Mix 01" name="second">Mix 01</el-tab-pane>
-            <el-tab-pane label="Mix 02" name="third">Role</el-tab-pane>
-            <el-tab-pane label="Mix 03" name="fourth">Task</el-tab-pane>
-          </el-tabs>
-        </div> -->
+    
       <div>
         <div class="flex justify-between mx-1 pt-1">
           <ClientOnly>
+            <nuxt-link
+          class=""
+          href="/chats"
+        >
             <button class="hover:bg-gray-300 hover:rounded-full p-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +31,7 @@
                 </g>
               </svg>
             </button>
+          </nuxt-link>
             <template #fallback>
               <div class="h-[4vh] flex items-center justify-center text-center">
                 <el-button loading round></el-button>
@@ -335,15 +301,18 @@
 
                     <ClientOnly>
                       <IconsStarFilled
-                        class="text-yellow-600 mb-1 hover:cursor-pointer"
-                        v-if="item.favorite"
-                        :id="'icon_favourite_' + index"
+                        class="text-yellow-600 hover:cursor-pointer"
                         @click="animateFavouriteIcon(index)"
+                        :id="'icon_favourite_' + index"
+                        v-if="item.favorite"
+                        :height="'34'"
+                        :width="'30'"
                       />
                       <IconsStarEmpty
                         v-else
-                        :id="'icon_favourite_' + index"
+                        class="mb-1 hover:cursor-pointer"
                         @click="animateFavouriteIcon(index)"
+                        :id="'icon_favourite_' + index"
                       />
 
                       <template #fallback>
@@ -356,7 +325,7 @@
                     </ClientOnly>
 
                     <ClientOnly>
-                      <div class="flex mt-1">
+                      <div class="flex">
                         <IconsChatEmpty />
 
                         <div class="text-xs relative left-1">
@@ -424,8 +393,8 @@
                     :class="isDark ? 'border-gray-700' : 'border-gray-200'"
                   >
                     <ClientOnly>
-                      <div class="text-wrap">
-                        <span class="font-semibold mr-1">Post Details</span>
+                      <div class="text-justify">
+                        <span class="font-semibold mr-1">Post Detail</span>
                         <span> {{ item.postDetails }} </span>
                       </div>
                       <template #fallback>
@@ -716,34 +685,35 @@ function animateFavouriteIcon(index) {
   // const t5 = gsap.timeline();
   // const t6 = gsap.timeline();
 
-  t4.fromTo(
-    `#icon_favourite_${index}`,
-    {
-      scale: 1.9,
-      autoAlpha: 0,
-      // opacity: largeIcon,
-      // ease: Linear.easeNone,
-      ease: "elastic.out(7, 9)",
-    },
-    {
-      duration: 0.3,
-      scale: 1.1,
-      autoAlpha: 1,
-      opacity: 0,
-      display: "none",
-      ease: "elastic.out(2, .9)",
-      // ease: "power2.inOut",
-      // ease: "elastic.out(2, .7)",
-      onComplete: () => {},
-    }
-  );
+  // t4.fromTo(
+  //   `#icon_favourite_${index}`,
+  //   {
+  //     scale: 1.9,
+  //     autoAlpha: 0,
+  //     display: "block",
+  //     // opacity: largeIcon,
+  //     // ease: Linear.easeNone,
+  //     ease: "elastic.out(7, 9)",
+  //   },
+  //   {
+  //     duration: 0.3,
+  //     scale: 1.1,
+  //     autoAlpha: 1,
+  //     opacity: 0,
+  //     display: "block",
+  //     ease: "elastic.out(2, .9)",
+  //     // ease: "power2.inOut",
+  //     // ease: "elastic.out(2, .7)",
+  //     onComplete: () => {},
+  //   }
+  // );
 
-  setTimeout(() => {
+  // setTimeout(() => {
     data.value[index].favorite = !data.value[index].favorite;
-  }, 500);
+  // }, 300);
 }
 function animateIcon(index, largeIcon = false) {
-  console.log(index, largeIcon);
+  // console.log(index, largeIcon);
 
   const t1 = gsap.timeline();
   const t2 = gsap.timeline();
@@ -887,7 +857,7 @@ function animateIcon(index, largeIcon = false) {
       },
     }
   );
-  console.log(largeIcon, data.value[index].liked);
+  // console.log(largeIcon, data.value[index].liked);
   setTimeout(() => {
     data.value[index].liked = !data.value[index].liked;
   }, 500);

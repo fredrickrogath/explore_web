@@ -36,15 +36,15 @@
       </span>
     </div>
 
-    <!-- @tab-click="handleClick" -->
     <ClientOnly>
       <div class="flex justify-center flex-wrap">
         <el-tabs
-          v-model="activeName"
-          class=""
-          :stretch="true"
+        v-model="activeName"
+        class=""
+        :stretch="true"
+        @tab-click=""
         >
-          <el-tab-pane label="Mix" name="first">
+          <el-tab-pane label="Mix" name="">
             <template #label class="">
               <i class="" :class="isDark ? 'text-white' : ''">
                 <svg

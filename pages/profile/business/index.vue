@@ -33,8 +33,8 @@
           <!-- Image -->
           <v-img
             class="object-cover bg-grey-lighten-2"
-            src="/food.jpg"
-            lazy-src="/food.jpg"
+            :src="'/food.jpg'"
+            :lazy-src="'/food.jpg'"
             cover
             height="30vh"
           >
@@ -94,7 +94,7 @@
           </div>
         </div>
 
-        <div
+        <!-- <div
           class="flex justify-evenly my-2 pb-2 border-b"
           :class="isDark ? 'border-gray-700' : 'border-gray-200'"
         >
@@ -160,9 +160,9 @@
               </svg>
             </span>
           </div>
-        </div>
+        </div> -->
 
-        <ClientOnly>
+        <!-- <ClientOnly>
           <div class="flex justify-center flex-wrap">
             <el-tabs
               v-model="activeName"
@@ -244,7 +244,7 @@
               </div>
             </div>
           </template>
-        </ClientOnly>
+        </ClientOnly> -->
 
         <!-- <div class="flex justify-between flex-wrap">
           <el-tabs

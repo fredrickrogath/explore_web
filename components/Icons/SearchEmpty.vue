@@ -2,8 +2,7 @@
   <ClientOnly>
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      :width="width" :height="height"
       viewBox="0 0 256 256"
     >
       <path
@@ -12,7 +11,7 @@
       ></path>
     </svg>
     <template #fallback>
-      <div class="h-[1vh] mb-4 flex items-center justify-center text-center my-2">
+      <div :class="margin" class="h-[1vh] flex items-center justify-center text-center my-2">
         <el-button loading round></el-button>
       </div>
     </template>
@@ -21,6 +20,30 @@
 
 <script>
 export default {
-  name: "PhMagnifyingGlass",
-};
+  name: 'PhMagnifyingGlass',
+  setup(props) {
+    const width = ref(props.width || '30');
+    const height = ref(props.height || '30');
+    const margin = ref(props.margin || 'mb-4');
+
+    return {
+      width,
+      height
+    };
+  },
+  props: {
+    width: {
+      type: String,
+      default: '30'
+    },
+    height: {
+      type: String,
+      default: '30'
+    },
+    margin: {
+      type: String,
+      default: 'mb-4'
+    }
+  }
+}
 </script>
