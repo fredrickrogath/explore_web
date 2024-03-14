@@ -47,7 +47,7 @@
           <!-- Image with gradient background -->
           <div class="absolute top-0 left-0 w-full h-full">
             <div
-              class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-b from-transparent to-gray-800 bg-opacity-50"
+              class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-b from-transparent to-gray-800/70 bg-opacity-30"
             ></div>
           </div>
           <!-- End of Image with gradient background -->
@@ -94,7 +94,7 @@
           </div>
         </div>
 
-        <!-- <div
+        <div
           class="flex justify-evenly my-2 pb-2 border-b"
           :class="isDark ? 'border-gray-700' : 'border-gray-200'"
         >
@@ -122,53 +122,46 @@
             <span class="font-semibold"> Follow </span>
           </div>
           <div
-            class="flex justify-between items-center border-[2px] border-blue-600 rounded px-3 py-1"
+            class="flex justify-between items-center element-with-gradient-border rounded px-3 py-1"
           >
-            <span class="mr-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="23"
-                height="23"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  fill="currentColor"
-                  d="M116 120a12 12 0 1 1 12 12a12 12 0 0 1-12-12m56 12a12 12 0 1 0-12-12a12 12 0 0 0 12 12m60-76v128a16 16 0 0 1-16 16h-59.47l-14.84 24.29a16 16 0 0 1-27.41-.06L99.47 200H40a16 16 0 0 1-16-16V56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16m-16 0H40v128h59.47a16.08 16.08 0 0 1 13.7 7.73L128 216l14.82-24.32a16.07 16.07 0 0 1 13.71-7.68H216ZM84 132a12 12 0 1 0-12-12a12 12 0 0 0 12 12"
-                />
-              </svg>
+            <span class="mr-2">
+              <IconsChatEmpty :height="'20'" :width="'20'" />
             </span>
             <span class="font-semibold"> Text </span>
           </div>
 
           <div
-            class="flex justify-between border-[2px] border-blue-600 rounded px-3 py-1"
+            class="flex justify-between element-with-gradient-border rounded px-3 py-1"
           >
-            <span>
+            <span class="mr-2 flex ">
               <svg
-                class="hover:cursor-pointer"
-                xmlns="http://www.w3.org/2000/svg"
-                width="23"
-                height="23"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M5.788 14.02a.746.746 0 0 0 .132.031a456.056 456.056 0 0 1 .844 2.002c.503 1.202 1.01 2.44 1.121 2.796c.139.438.285.736.445.94c.083.104.178.196.29.266a.88.88 0 0 0 .186.088c.32.12.612.07.795.009a1.313 1.313 0 0 0 .304-.15L9.91 20l2.826-1.762l3.265 2.502c.048.037.1.068.156.093c.392.17.772.23 1.13.182c.356-.05.639-.199.85-.368a1.992 1.992 0 0 0 .564-.728l.009-.022l.003-.008l.002-.004v-.002l.001-.001a.756.756 0 0 0 .04-.133l2.98-15.025a.752.752 0 0 0 .014-.146c0-.44-.166-.859-.555-1.112c-.334-.217-.705-.227-.94-.209c-.252.02-.486.082-.643.132a3.458 3.458 0 0 0-.26.094l-.011.005l-16.714 6.556l-.002.001a2.296 2.296 0 0 0-.167.069a2.522 2.522 0 0 0-.38.212c-.227.155-.75.581-.661 1.285c.07.56.454.905.689 1.071c.128.091.25.156.34.199c.04.02.126.054.163.07l.01.003zm14.138-9.152h-.002a.785.785 0 0 1-.026.011L3.164 11.444a.818.818 0 0 1-.026.01l-.01.003a1.126 1.126 0 0 0-.09.04a.851.851 0 0 0 .086.043l3.142 1.058a.75.75 0 0 1 .16.076l10.377-6.075l.01-.005a1.59 1.59 0 0 1 .124-.068c.072-.037.187-.091.317-.131c.09-.028.357-.107.645-.014a.854.854 0 0 1 .588.689a.84.84 0 0 1 .003.424c-.07.275-.262.489-.437.653c-.15.14-2.096 2.016-4.015 3.868l-2.613 2.52l-.465.45l5.872 4.502a.536.536 0 0 0 .251.04a.229.229 0 0 0 .117-.052a.495.495 0 0 0 .103-.12l.002-.001l2.89-14.573a1.858 1.858 0 0 0-.267.086zm-8.461 12.394l-1.172-.898l-.284 1.805zm-2.247-2.68l1.165-1.125l2.613-2.522l.973-.938l-6.52 3.817l.035.082a339.2 339.2 0 0 1 1.22 2.92l.283-1.8a.747.747 0 0 1 .231-.435"
-                  clip-rule="evenodd"
-                />
-              </svg>
+                        class="mr-1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m5.812 11l2.178 2.168a1.1 1.1 0 0 0 1.05.3a1.119 1.119 0 0 0 .809-.74l3.576-10.72A1.118 1.118 0 0 0 11.987.57L1.267 4.147a1.119 1.119 0 0 0-.74.859a1.099 1.099 0 0 0 .3 1l2.737 2.737l-.09 3.466zM13.106.79L3.564 8.742"
+                        />
+                      </svg>
+
+              <span class="font-semibold"> Share </span>
             </span>
           </div>
-        </div> -->
+        </div>
 
-        <!-- <ClientOnly>
+        <!-- @tab-click="handleClick" -->
+        <ClientOnly>
           <div class="flex justify-center flex-wrap">
             <el-tabs
               v-model="activeName"
               class="demo-tabs"
               :stretch="true"
-              @tab-click="handleClick"
             >
               <el-tab-pane label="Mix" name="first">
                 <template #label class="">
@@ -244,29 +237,9 @@
               </div>
             </div>
           </template>
-        </ClientOnly> -->
+        </ClientOnly>
 
-        <!-- <div class="flex justify-between flex-wrap">
-          <el-tabs
-            v-model="activeName"
-            class="demo-tabs"
-            @tab-click="handleClick"
-          >
-            <el-tab-pane label="Mix" name="first" class="w-full">
-              
-
-              
-            </el-tab-pane>
-            <el-tab-pane label="Mix 01" name="second" class="w-full">
-              
-            </el-tab-pane>
-            <el-tab-pane label="Mix 02" name="third" class="w-full">
-              
-            </el-tab-pane>
-          </el-tabs>
-        </div> -->
-
-        <Navigations/>
+        <Navigations />
 
         <!-- <div class="p-4 border-t mx-8 mt-2">
         <button class="w-1/2 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">Follow</button>
@@ -276,3 +249,11 @@
     <!-- End of Sanmple 01 -->
   </div>
 </template>
+
+<script lang="ts" setup>
+const isDark = useDark();
+isDark.value = false;
+const activeName = ref('first');
+</script>
+
+

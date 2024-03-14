@@ -3,6 +3,7 @@
     <div
       class="w-screen text-sm max-w-2xl sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto"
     >
+    <div class="fixed top-0 z-20 w-full backdrop-blur-sm bg-white/30">
       <SearchBar/>
 
       <div class="flex justify-between mx-1 my-2 text-sm">
@@ -13,6 +14,9 @@
           >Tags</span
         >
       </div>
+    </div>
+
+    <div class="h-[104px]"></div>
 
       <div class="grid grid-cols-2 gap-1 px-0 mb-10">
         <div v-for="(item, index) in 20" :key="index">

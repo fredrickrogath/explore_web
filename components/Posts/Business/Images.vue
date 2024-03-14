@@ -84,9 +84,9 @@ import { gsap } from "gsap";
 
 export default {
   mounted() {
-    this.importAll(
-      require.context("../assets/images/clients/", true, /\.png$/)
-    );
+    // this.importAll(
+    //   require.context("../assets/images/clients/", true, /\.png$/)
+    // );
   },
 
   data() {

@@ -162,4 +162,10 @@ font-size:  10px !important;
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.element-with-gradient-border {
+    border: 2px solid;
+    border-image: linear-gradient(to right, #1b53a2, #4299e1);
+    border-image-slice: 1;
+}
 </style>
